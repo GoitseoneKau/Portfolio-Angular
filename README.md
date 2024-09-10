@@ -1,27 +1,26 @@
 # AngularProfile
+Portfolio Site built with Angular and CSS (using Tailwind, Materialize CSS) for Icons FontAwesome and BootstrapIcons.
+## N.B/This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+# First Step To Running This Site
+- ## *clone or download repo*
+To run a copy of the site, clone or download a zip of this repository into your local machine.
+
+- ## *if repo is downloaded*
+If its a zip file, extract the files into your desired folder(N.B//FontAwesome will come with the repository)
+
+- ## *Installing Dependencies*
+now open a command prompt from the root folder and begin to install the dependecies:
+- npm install -g angular (to install angular globally if you do not have it currently)
+- npm install -D tailwindcss,materialize-css@next,bootstrapicons
+
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+After all packages have finished installing run `ng serve` or `npm run start` for a dev server. Navigate to `http://localhost:4200/` on your machine browser. The site will automatically reload if you change any of the source files.
 
-## Code scaffolding
+deployed link (for live server preview): <https://goitseonekau.github.io/angular-profile/>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
