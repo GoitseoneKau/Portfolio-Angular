@@ -24,12 +24,24 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/assets/",
+                "output": "assets/"
               }
             ],
             "styles": [
+              "node_modules/materialize-css/dist/css/materialize.min.css",
+              "node_modules/tailwindcss/tailwind.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.min.css",
+              "src/app/assets/fontawesome-free-6.6.0-web/css/all.min.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/materialize-css/dist/js/materialize.min.js",
+              "src/m.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -87,12 +99,24 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/assets/",
+                "output": "assets/"
               }
             ],
             "styles": [
-              "src/styles.css"
+            "node_modules/materialize-css/dist/css/materialize.min.css",
+            "node_modules/tailwindcss/tailwind.css",
+            "node_modules/bootstrap-icons/font/bootstrap-icons.min.css",
+            "src/app/assets/fontawesome-free-6.6.0-web/css/all.min.css",
+            "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/materialize-css/dist/js/materialize.min.js",
+              "src/m.js"
+            ]
           }
         }
       }

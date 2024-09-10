@@ -1,0 +1,65 @@
+@font-face {
+    font-family:"Roboto",sans-serif;
+    src: url('../../assets/font/Roboto-Regular.ttf') format('ttf')
+}
+
+.roboto{
+    font-family:"Roboto",sans-serif;
+    font-size: 17px;
+}
+
+.brand-logo{
+    font-size: 28px;
+}
+
+.contactMe{
+    font-size: 25px;
+}
+
+
+.brand-logo:hover,
+.contactMe:hover{
+color: gold;
+}
+
+/* nav{
+    background: url("../../../../public/tablet.jpg") fixed;
+    background-size: cover;
+} */
+
+ul li a,a{
+    color: rgb(255, 255, 255);
+}
+
+ul li a{
+    font-size: 16px;
+}
+
+
+.sidenav li > a{
+    padding: 0 20px;
+}
+
+.sidenav li a:hover{
+    background-color: white;
+    color: black;
+}
+.bi-font{
+    font-size: 28px;
+    padding: 0 15px;
+}
+
+nav ul a:hover {
+    /* background-color: rgba(0, 0, 0, 0.472); */
+    background: none;
+    color:gold
+}
+
+
+nav .sidenav-trigger {
+    margin: 0 ;
+}
+
+.sidenav-trigger i:hover{
+    background-color: rgba(0, 0, 0, 0.661);
+}

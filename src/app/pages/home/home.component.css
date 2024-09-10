@@ -1,0 +1,85 @@
+.home{
+    font-family: 'Avenir Next Condensed';
+    background: url("../../assets/images/tablet.jpg") no-repeat center fixed;
+    background-size: cover;
+    min-height:110vh;
+    width: 100%;
+    z-index: -1;
+}
+
+.home::before{
+    content: "";
+    width: 100%;
+    min-height: 110%;
+    background-color: #00000092;
+    filter: blur(5px);
+    position: absolute;
+    z-index:0;
+}
+
+.summary{
+    min-height:110vh;
+    width: 100%;
+}
+
+.bio{
+    height: 100%;
+}
+.bio-para{
+    text-wrap: wrap;
+    width: 90%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    height: 100%;
+   
+}
+
+.bio-image{
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.bio-pic{
+    display: block;
+    margin:0 auto;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.459);
+    width:250px; height:250px;
+    background: url("../../assets/images/biopic (2).jpg") no-repeat center content-box;
+    background-size: 100%;
+}
+
+
+
+
+h1{
+    font-family: 'Avenir Next Condensed';
+    cursor:none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+div.image{
+    width: 50%;
+    height: 50%;
+}
+
+.input-cursor{
+    width: 2px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 8px;
+    animation: blink 0.4s linear infinite alternate;
+}
+
+@keyframes blink {
+    0%{opacity: 1;}
+    40%{opacity: 1;}
+    60%{opacity: 0;}
+    100%{opacity: 0;}   
+}
+
+/* font to check : Avenir Next Condensed */

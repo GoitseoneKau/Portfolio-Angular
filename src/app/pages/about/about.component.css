@@ -1,0 +1,203 @@
+
+.about{
+    font-family: 'Avenir Next Condensed';
+    background: url("../../../../public/coffee-laptop2.jpg") fixed no-repeat center;
+    background-size: cover;
+    height: 200vh;
+    width: 100%;
+    z-index: -1;
+    font-family: 'Avenir Next Condensed';
+    color: white;
+}
+
+.about::before{
+    content: "";
+    width: 100%;
+    height: 200%;
+    background-color: #00000092;
+    filter: blur(5px);
+    position: absolute;
+    z-index:0;
+}
+
+.details{
+    height: 100vh;
+}
+
+
+p{
+    font: 500 13px "Arial black";
+    flex-wrap: wrap;
+}
+
+h1{
+    font-family:  'Avenir Next Condensed' ;
+}
+
+
+/*list certificates style*/
+ul.certificates{
+    font: 500 16px "Arial black";
+}
+
+ul.certificates li {
+    padding: 10px;
+}
+
+ul.certificates li a:hover {
+   color: goldenrod ;
+}
+
+.projects-s>div.slide>.image.active{
+    animation: fade 1s ease;
+    opacity:1;
+}
+
+.projects-s>div.slide>.image{
+    width:100%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.379);
+    position: absolute;
+    opacity: 0;
+}
+.projects-s>div.slide>.image>img{
+    width:100%;
+    height:100%;
+}
+.projects-s{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: #00000037;
+    filter: blur(10px);
+}
+
+.projects-s>div.slide{
+    padding: 35px;
+    opacity: 1;
+    width:100%;
+    height:80%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.projects-s>h1{
+    height:20%;
+    padding: 10px 0px;
+}
+
+.projects-s>div.slide>button{
+    border: none;
+    background-color: #01010167;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    justify-self: center;
+    z-index: 1;
+}
+
+.projects-s>div.slide>button:hover{
+    border: none;
+    background-color: #000000cc; 
+}
+
+.projects-s>div.slide>button:active{
+    border: none;
+    background-color: #18161600; 
+}
+
+.drive{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-flow: row wrap;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.442);
+    height: 50vh;
+}
+
+.drive>div.drive_image{
+    flex: 2 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.driven_text{
+    flex: 2 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.driven_text>p{
+    text-align: left;
+    vertical-align: middle;
+}
+
+h1.driveHead{
+
+    font-size: 60px;
+
+}
+
+.closing{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 50vh;
+    background-color: rgba(255, 255, 255, 0.392);
+ 
+}
+
+.text1{
+    padding: 20px;
+    flex: 2 50%;
+    width: 100%;
+    height: 100%;
+    color: snow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.btn-contact{
+    text-decoration:none;
+    background-color:goldenrod;
+    text-align: center; 
+    color: black;
+    border: 1px solid goldenrod;
+    padding: 10px;
+    border-radius: 5px;
+    width: 120px;
+}
+
+.btn-contact:hover{
+    background-color:snow;
+    color: black;
+    border-color: snow ;
+}
+.btn-contact:active{
+    border: 5px  black;
+    border-style:inset;
+}
+.img1{
+    flex: 2 50%;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes fade {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+
