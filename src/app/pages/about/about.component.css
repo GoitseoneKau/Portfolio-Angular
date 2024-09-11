@@ -1,7 +1,7 @@
 
 .about{
     font-family: 'Avenir Next Condensed';
-    background: url("../../../../public/coffee-laptop2.jpg") fixed no-repeat center;
+    background: url("../../assets/images/coffee-laptop2.jpg") fixed no-repeat center;
     background-size: cover;
     height: 200vh;
     width: 100%;
@@ -64,6 +64,7 @@ ul.certificates li a:hover {
     width:100%;
     height:100%;
 }
+
 .projects-s{
     width: 100%;
     height: 100vh;
