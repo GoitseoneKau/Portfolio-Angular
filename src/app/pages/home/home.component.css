@@ -2,7 +2,7 @@
     font-family: 'Avenir Next Condensed';
     background: url("../../assets/images/tablet.jpg") no-repeat center fixed;
     background-size: cover;
-    min-height:110vh;
+    min-height:100vh;
     width: 100%;
     z-index: -1;
 }
@@ -10,7 +10,7 @@
 .home::before{
     content: "";
     width: 100%;
-    min-height: 110%;
+    min-height: 100%;
     background-color: #00000092;
     filter: blur(5px);
     position: absolute;
@@ -18,13 +18,36 @@
 }
 
 .summary{
-    min-height:110vh;
+    min-height:100vh;
     width: 100%;
+    z-index: 0;
+}
+
+.summary .bio-section{
+    min-height:50vh;
+    width: 100%;
+}
+
+
+.summary .skill-section{
+    min-height:50vh;
+    width: 100%;
+}
+
+.summary::before{
+    content: "";
+    width: 100%;
+    height: 110vh;
+    background-color: #00000092;
+    filter: blur(5px);
+    position: absolute;
+    z-index:-1;
 }
 
 .bio{
     height: 100%;
 }
+
 .bio-para{
     text-wrap: wrap;
     width: 90%;
@@ -46,7 +69,7 @@
     display: block;
     margin:0 auto;
     border-radius: 50%;
-    border: 2px solid rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(0, 0, 0);
     width:250px; height:250px;
     background: url("../../assets/images/biopic (2).jpg") no-repeat center content-box;
     background-size: 100%;
@@ -65,7 +88,7 @@ h1{
 }
 
 h3{
-    font-size: 4em;
+    font-size: 4.5em;
 }
 
 div.image{
@@ -93,6 +116,9 @@ div.image{
 .my-2xl{
     font-size: 3em;
 }
+.my-xl{
+    font-size: 2em;
+}
 
 .brand{
     height: 8em;
@@ -103,9 +129,17 @@ div.image{
 .noDisplay{
 display: none;
 }
-
+#scrollBtn{
+    display: block;
+}
+#scrollDownText{
+    display: none;
+}
 @media screen and (min-width:640px) {
-    .scrollBtn{
+    #scrollBtn{
         display: none;
+    }
+    #scrollDownText{
+        display: flex;
     }
 }
