@@ -1,56 +1,26 @@
-<div class="projects-s flex flex-col items-center justify-center py-10">
-    <h1 class="z-10 text-white  max-sm:-mt-24 w-full text-center header">Projects</h1>
-    <div #slide class="slide flex justify-center -mb-14 max-sm:-mb-0 items-center max-sm:hidden">
-        <div #sliders class="image flex justify-center items-center active">
-            <a title="Sunnyside Web" href="https://sunnyside-agency-landing-7ddf3.web.app/" class="w-full h-full flex justify-center">
-                <img src="assets/images/projects/desktop-preview.jpg" alt="" srcset="" height="10%" width="50%">
-            </a>
-        </div>
-        <div #sliders class="image flex justify-center items-center">
-            <a title="First Portfolio" href="https://goitseonekau.github.io/Portfolio/" class="w-full h-full flex justify-center">
-                <img src="assets/images/projects/Capture.jpg" alt="" srcset="" height="500px" width="80%">
-            </a>
-        </div>
-        <div #sliders class="image flex justify-center items-center">
-            <a title="Memory Game" href="https://memorygame-25d86.web.app/" class="w-full h-full flex justify-center">
-            <img src="assets/images/projects/memory game.png" alt="" srcset="" height="400px" width="80%">
-            </a>
-        </div>
-        <div #sliders class="image flex justify-center items-center ">
-            <h2 class="text-white text-center w-full">Coming Soon</h2>
-        </div>
-        <div #sliders class="image flex justify-center items-center">
-            <h2 class=" text-center w-full text-yellow-600">Coming Soon</h2>
-        </div>
-        <button (click)="previous()" title="b" #left class="left-arrow"><i class="fa-solid fa-chevron-left fa-1x" aria-hidden="true"></i></button>
-        <button (click)="next()" title="c" #right class="right-arrow"><i class="fa-solid fa-chevron-right  fa-1x" aria-hidden="true"></i></button>
-    </div>
-
-
-    <div class="list-projects sm:hidden mb-14 z-10">
-        <div class="flex justify-center items-center p-3">
-            <h5 class="w-3/5 text-center text-white px-5 text-xl">Sunnyside Agency</h5>
-            <a title="Sunnyside Web" href="https://sunnyside-agency-landing-7ddf3.web.app/" class="w-full h-full flex justify-center">
-                <img src="assets/images/projects/desktop-preview.jpg" alt="" srcset="" height="10%" width="50%">
-            </a>
-        </div>
-        <div class="flex justify-center items-center p-3">
-            <h5 class="w-3/5 text-center text-white px-5  text-xl">Basic Portfolio</h5>
-            <a title="First Portfolio" href="https://goitseonekau.github.io/Portfolio/" class="w-full h-full flex justify-center">
-                <img src="assets/images/projects/Capture.jpg" alt="" srcset="" height="500px" width="50%">
-            </a>
-        </div>
-        <div class="flex justify-center items-center p-3">
-            <h5 class="w-3/5 text-center text-white px-5  text-xl">Color Memory Game</h5>
-            <a title="Memory Game" href="https://memorygame-25d86.web.app/" class="w-full h-full flex justify-center">
-            <img src="assets/images/projects/memory game.png" alt="" srcset="" height="300px" width="50%">
-            </a>
-        </div>
-         <div class="flex justify-center items-center p-3">
-            <h5 class="w-3/5 text-center text-white px-5  text-xl">No Title</h5>
-            <div class="bg-black h-32 flex justify-center items-center w-full">
-                <h4 class="text-white text-center w-1/2">Coming Soon</h4>
-            </div>
+<div class="projects flex flex-col gap-5 items-center justify-center py-10">
+    <h1 class="z-10 mt-[2.2em]
+     text-white font-bold cursor-none text-4xl sm:text-5xl md:text-7xl 
+      w-full text-center font-Avenir">
+      PROJECTS
+    </h1>
+   <div class=" flex flex-col gap-5 z-10 w-full p-5 md:w-11/12 ">
+   @for(repo of repos;track repo.id){
+    <div class="project" >
+        <img class="sm:w-1/2 project-image" src="{{repo.image}}"  alt="" srcset="">
+        
+        <div class="flex flex-col gap-3 sm:w-1/2">
+            <h2 class="font-Avenir font-semibold text-wrap text-left text-2xl md:text-4xl">{{repo.name.split("-").join(" ")}}</h2>
+            <p class=" text-left font-semibold">{{repo.created_at|date}}</p>
+            <p class="text-left text-wrap">{{repo.description}}</p>
+            <p class="deployment-link" *ngIf="repo.name!=='TSExpressRestAPI'">
+                <i class="fa fa-globe fa-lg px-2" aria-hidden="true"></i>
+                <a href="{{repo.homepage}}" class="text-wrap ">Deployed Web Page</a></p>
+            <p class="github-link">
+                <i class="fa-brands fa-github fa-lg px-2" aria-hidden="true"></i>
+                <a href="{{repo.html_url}}" class="text-wrap ">Github Page</a></p>
         </div>
     </div>
+   }
+   </div>
 </div>

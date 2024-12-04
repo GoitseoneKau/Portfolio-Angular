@@ -5,7 +5,7 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-import { ApplicationRef, Component, OnInit, signal } from '@angular/core';
+import { afterNextRender, ApplicationRef, Component, OnInit, signal } from '@angular/core';
 import { first } from 'rxjs';
 
 @Component({
@@ -34,6 +34,8 @@ export class HomeComponent implements OnInit {
   constructor(appRef: ApplicationRef) {
     //inject Apllication Reference
     this.app = appRef;
+
+    afterNextRender(()=> window.scrollTo({ top: 0, behavior: 'smooth' }))
   }
 
   ngOnInit(): void {
@@ -69,9 +71,6 @@ export class HomeComponent implements OnInit {
   }
 
   scrollTo(element: HTMLElement) {
-  
       element.scrollIntoView({ behavior: 'smooth', inline: 'nearest' });
-  
-  
   }
 }

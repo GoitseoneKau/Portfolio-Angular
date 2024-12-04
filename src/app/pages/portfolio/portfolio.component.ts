@@ -1,74 +1,87 @@
-import { Component, ElementRef, EventEmitter, Output, Renderer2, ViewChild } from '@angular/core';
+import { DatePipe, NgIf } from '@angular/common';
+import { GitReposService, Repo } from './../../services/git-repos.service';
+import { afterNextRender, Component, ElementRef, EventEmitter, Output, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [],
+  imports: [DatePipe,NgIf],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css'
 })
 export class PortfolioComponent {
   //JS for sliding images
-  @Output() nextImage = new EventEmitter<void>();
-  @Output() prevImage = new EventEmitter<void>();
-
   @ViewChild('slide', { static: true })
   slide!: ElementRef;
   renderer!: Renderer2;
 
+  repos:Repo[] = []
+  images:string[]=[
+    "assets/images/projects/DailyTodo responsive design.gif",
+    "assets/images/projects/MemoryGame responsive design.gif",
+    "assets/images/projects/Portfolio Angular responsive design.gif",
+    "assets/images/projects/Store Admin Management System Responsive Design.gif",
+    "assets/images/projects/Sunny Side Marketing Responsive Design.gif",
+    "assets/images/projects/TSExpressRestAPI.gif"
+  ]
 
-constructor(){
+  descriptions=
+    [
+      {"Store Admin Management System":
+        "A project that required administrative privileges and give admin ability to add, update and delete a product. Have a login page to aauthenticate user"},
+      {"DailyTodo":
+        "A project to have login and signup page to add a user. The user is able to create, update and delete a todo. The todos have filter based on priority and search capability adn they are ordered in ascending order of the date"},
+      {"MemoryGame":
+        "A side project that generates random colours to pick from. Has difficulty levels"},
+      {"Portfolio Angular":
+        "This project is a portfolio to showcase  my past projects and let interested clients to be able to contact me"},
+      {"Sunny Side Marketing":
+        "A showcase project of a marketing landing page. To show UI/UX skills  "},
+      {"TSExpressRestAPI":
+        "An API that has CRUD(Create,Update,Delete) capabilities, with dummy users and todos "}
+    ]
 
-}
 
-ngOnInit():void{
- 
-  this.nextImage.emit();
-  this.prevImage.emit();
-}
-
-
-activeSlide = 0;
-//Function to slide images or set the acvtive image
-setImageSlide(){
-  this.slide.nativeElement.querySelectorAll('.image').forEach((slides: any)=>slides.classList.remove("active"));//get all related elements as a list/array and clear the active class
- 
-  this.slide.nativeElement.querySelectorAll('.image')[this.activeSlide].classList.add("active");//get the specific element that needs to be shown from list and add active class
-}
-
-//Function to increase activeSlide and navigate to next image
-//untill it reaches last index and change activeSlide to first index, to transition to next first image
-nextSlide(){
-  this.activeSlide++;
-  if(this.activeSlide > this.slide.nativeElement.querySelectorAll('.image').length-1){
-      this.activeSlide=0;
+  constructor(private repoService:GitReposService){
+    afterNextRender(()=> window.scrollTo({ top: 0, behavior: 'smooth' }))
   }
-}
 
-//Function to decrease activeSlide and navigate to previous image
-//untill it reaches first index and change activeSlide to last index, to transition to previous last image
-prevSlide(){
-  this.activeSlide--;
-  if(this.activeSlide < 0){
-      this.activeSlide= this.slide.nativeElement.querySelectorAll('.image').length-1;
-  }
-}
+  ngOnInit():void{
+    this.repoService.getRepos().subscribe((repos)=>{
+    
+      let repositories = repos.filter((repo)=>repo.name!="todosAngularSSRTest").sort((a,b)=>a.created_at<b.created_at?1:-1)
 
-//add onclick event for the right button
-//place nextSlide function-N.B must be before setImageSlide function to update the activeSlide vaariable for smooth transition
-next(){
-  this.nextSlide();
-  this.setImageSlide();
-}
+      let updated_repos: Repo[] = []
+    
+      repositories.map((repo)=>{
+      this.images.map(image=>{
+        let imageTest = image.includes(repo.name.split("-").join(" "))
 
-//add onclick event for the left button
-//place prevSlide function-N.B must be before setImageSlide function to update the activeSlide vaariable for smooth transition
-previous(){
-  this.prevSlide();
-  this.setImageSlide();
-};
+          if(imageTest){
+            updated_repos.push({...repo,image:image})
+          }
 
+        })
+      })
 
+      let descr_updated_repos:Repo[]= []
 
+      updated_repos.map((repo)=>{
+        this.descriptions.map((d)=>{
+          let search_string = repo.name.split("-").join(" ")
+        
+            if(JSON.stringify(d).includes(search_string)){
+              let description = JSON.stringify(d).split(":")[1]
+              let trim_curls = description.substring(1,description.length-2)
+              descr_updated_repos.push({...repo,description:trim_curls})
+            }
+        })
+      
+      })
+
+      this.repos = descr_updated_repos
+    })//end of service subscription
+
+  }//end of function
 
 }
