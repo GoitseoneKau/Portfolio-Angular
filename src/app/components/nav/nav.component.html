@@ -14,12 +14,12 @@
     <!-- nice purple : #ac85e0 -->
   
     <ul id="nav-items" class=" hide-on-med-and-down  flex-nowrap mr-10">
-      <li><a class="px-5 font-bold roboto link w-36 text-center" routerLink="">Home</a></li>
-      <li><a class="px-5 font-bold roboto link w-36 text-center" routerLink="About">About</a></li>
-      <li><a class="px-5 font-bold roboto link w-36 text-center" routerLink="Projects">Projects</a></li>
+      <li ><a class="px-5 font-bold roboto link w-36 text-center" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"   [routerLink]="['/']">Home</a></li>
+      <li ><a class="px-5 font-bold roboto link w-36 text-center" routerLinkActive="active" [routerLink]="['/About']">About</a></li>
+      <li><a class="px-5 font-bold roboto link w-36 text-center"   routerLinkActive="active"   [routerLink]="['/Projects']">Projects</a></li>
     </ul>
 
-    <a class="contactMe px-5 font-serif  w-30 bg-transparent right hide-on-med-and-down self-end text-center" routerLink="Contact">Contact Me</a>
+    <a class="contactMe px-5 font-serif  w-30 bg-transparent right hide-on-med-and-down self-end text-center"  routerLinkActive="active" routerLink="Contact">Contact Me</a>
 
     <button title="side" data-target="sidebar" class="sidenav-trigger hide-on-med-and-up show-on-medium-and-down right">
       <!-- <i class="material-icons">menu</i> -->
@@ -39,8 +39,8 @@
     </span>
   </button>
   </li>
-    <li><a  class="text-center" routerLink="">Home</a></li>
-    <li><a  class="text-center" routerLink="About">About</a></li>
-    <li><a  class="text-center" routerLink="Projects">Projects</a></li>
-    <li><a  class="text-center" routerLink="Contact">Contact</a></li>
+    <li><a  class="text-center"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="">Home</a></li>
+    <li><a  class="text-center"  routerLinkActive="active" routerLink="About">About</a></li>
+    <li><a  class="text-center"  routerLinkActive="active" routerLink="Projects">Projects</a></li>
+    <li><a  class="text-center"  routerLinkActive="active" routerLink="Contact">Contact</a></li>
 </ul>

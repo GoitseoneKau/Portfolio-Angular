@@ -22,10 +22,6 @@
 color: gold;
 }
 
-/* nav{
-    background: url("../../../../public/tablet.jpg") fixed;
-    background-size: cover;
-} */
 
 ul li a,a{
     color: rgb(255, 255, 255);
@@ -78,15 +74,28 @@ button.sidenav-close:focus,button.sidenav-close:active,li>button.sidenav-close:h
     background-color: white;
     color: black;
 }
+
+.sidenav li a.active{
+    background-color: rgba(255, 255, 255, 0.692);
+    color: gold;
+}
+
+
 .bi-font{
     font-size: 28px;
     padding: 0 15px;
 }
 
-nav ul a:hover {
+nav ul a:hover{
     /* background-color: rgba(0, 0, 0, 0.472); */
     background: none;
     color:gold
+}
+
+nav ul a.active,a.active{
+    /* background-color: rgba(0, 0, 0, 0.472); */
+    background: none;
+    color:goldenrod
 }
 
 

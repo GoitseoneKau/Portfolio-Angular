@@ -92,6 +92,10 @@
     filter: none;
 }
 
+.active img{
+    filter: none;
+}
+
 
 @media (min-width:640px){
     .project img{
