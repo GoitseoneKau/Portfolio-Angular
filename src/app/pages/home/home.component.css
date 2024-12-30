@@ -2,7 +2,7 @@
     font-family: 'Avenir Next Condensed';
     background: url("../../assets/images/tablet.jpg") no-repeat center fixed;
     background-size: cover;
-    height:100vh;
+    height:100dvh;
     width: 100%;
     z-index: -1;
 }
@@ -41,7 +41,7 @@
 .bio-para{
     overflow-wrap: break-word;
     width: 90%;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins","Times New Roman", Times, sans-serif;
     font-weight: 600;
     font-style: normal;
     height: 100%;
