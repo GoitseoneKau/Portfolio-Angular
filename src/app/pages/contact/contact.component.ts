@@ -41,7 +41,7 @@ export class ContactComponent implements OnInit {
       // Send the form data to the API
       this.http.post(this.url, formData).subscribe({
         next: () => {
-          this.clientMessage ="Thank You, You'll be contacted shortly";
+          this.clientMessage ="Thank You, You'll be contacted in 24 hours";
         },
         error: () => {
           this.clientMessage="Oops, Seems the message did'nt get sent.\n\n Please try again ";

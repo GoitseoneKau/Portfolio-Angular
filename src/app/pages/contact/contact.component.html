@@ -54,7 +54,7 @@
                         <div *ngIf="lastname.hasError('required')" class="text-red-600">
                             Last name is required.
                         </div>
-                        <div *ngIf="firstname.hasError('minlength')" class="text-red-600">
+                        <div *ngIf="lastname.hasError('minlength')" class="text-red-600">
                             Last name must be atleast 3 characters long or more.
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                 <input type="email" id="email" name="email"
                 [class.holderError]="email.touched"
                 [class.ng-invalid]="email.touched"
-                pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"  
+                pattern="[\w\.]+@([\w]+\.)+[\w]{2,4}"  
                
                 [(ngModel)]="data.email" #email="ngModel"  
                 placeholder="example@domain.com" required email>
@@ -100,8 +100,8 @@
                         <div *ngIf="message.hasError('required')" class="text-red-600">
                             message is required
                         </div>
-                        <div *ngIf="firstname.hasError('minlength')" class="text-red-600">
-                            What you'd like should be atleast 80 or more characters 
+                        <div *ngIf="message.hasError('minlength')" class="text-red-600">
+                            What you'd like to say should be atleast 80 or more characters.
                         </div>
                     </div>
                 }
@@ -112,7 +112,7 @@
             {{clientMessage}}
         </p>
             <div class=" flex justify-center items-center p-2 w-2/3 sm:w-1/2">
-                <input [disabled]="!myForm.control.valid"   class="font-bold w-full" type="submit" id="submit" value="Submit">
+                <input [disabled]="!myForm.control.valid||clientMessage.length>0"   class="font-bold w-full" type="submit" id="submit" value="Submit">
         
             </div>
         </form>

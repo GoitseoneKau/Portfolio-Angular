@@ -28,7 +28,8 @@
 
 
 ## Introduction
-This is a user and todos simple api. WIth basic _POST_, _DELETE_, _PUT_, _GET_ methods.
+This is a portfolio site I developed during a learneship programme, Mlab's Codetribe Academy for Angular and IONIC(Mobile Development).
+To showcase every project from my personal development and the projects I developed during the learnership. Please check it put and get inspired to hire me for your projects, whether professional portfolio or an ecormmece management site. I learned the skills and techniques, lets put your vision and these skills together to bring your idea or brand to life via website.
 
 
 
@@ -36,7 +37,8 @@ This is a user and todos simple api. WIth basic _POST_, _DELETE_, _PUT_, _GET_ m
 
 
 ## Cloning and running the app
-This is after you download and extract zip file in your desired folder or cloned this project via github
+This is after you download and extract zip file in your desired folder or cloned this project via github.
+(N.B//download only for educational purposes,site design and images of my identity are copyrighted and protected)
 
 ### CMD line
 ```
